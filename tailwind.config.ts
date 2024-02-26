@@ -1,10 +1,14 @@
 import type { Config } from "tailwindcss";
+import forms from "@tailwindcss/forms";
+const {nextui} = require("@nextui-org/theme");
 
 const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./node_modules/@nextui-org/theme/dist/components/modal.js",
+    "./node_modules/@nextui-org/theme/dist/components/input.js",
   ],
   theme: {
     extend: {
@@ -15,6 +19,9 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    forms,
+    nextui(),
+  ],
 };
 export default config;
